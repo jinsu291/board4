@@ -4,10 +4,8 @@ import com.example.board4.app.post.entity.Post;
 import com.example.board4.app.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -30,6 +28,28 @@ public class PostController {
 
         redirectAttributes.addAttribute("id", id);
         redirectAttributes.addAttribute("status", true);
+        return "redirect:/post/{id}";
+    }
+
+
+    @GetMapping("/{id}/modify")
+    public String showModify(@PathVariable Long id, Model model){
+        Post findPost = postService.findById(id);
+        model.addAttribute("post", findPost);
+        return "post/modify";
+    }
+
+    @PostMapping("/{id}/modify")
+    public String showModify(@PathVariable Long id, @RequestParam String subject,
+                           @RequestParam String content, @RequestParam String contentHtml)
+    {
+        Post findPost = postService.findById(id);
+        findPost.setSubject(subject);
+        findPost.setContent(content);
+        findPost.setContentHtml(contentHtml);
+
+        postService.update(findPost);
+
         return "redirect:/post/{id}";
     }
 }

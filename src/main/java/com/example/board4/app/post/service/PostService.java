@@ -20,4 +20,13 @@ public class PostService {
         postMapper.save(post);
         return post.getId();
     }
+
+    public Post findById(Long id) {
+        return postMapper.findById(id);
+    }
+
+    @Transactional
+    public Long update(Post post) {
+        return postMapper.update(post);
+    }
 }
