@@ -1,0 +1,4 @@
+# DB 생성
+DROP DATABASE IF EXISTS board4;
+CREATE DATABASE board4;
+USE board4;
