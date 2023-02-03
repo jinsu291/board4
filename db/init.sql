@@ -11,6 +11,5 @@ CREATE TABLE post (
                          modifyDate DATETIME NOT NULL,
                          `subject` CHAR(100) NOT NULL,
                          content LONGTEXT NOT NULL,
-                         contentHtml LONGTEXT NOT NULL,
-                         `author` CHAR(30) NOT NULL
+                         contentHtml LONGTEXT NOT NULL
 );

@@ -14,13 +14,9 @@ public class Post {
     private String content;
     private String contentHtml;
 
-    private long author;
-
-    public Post(String subject, String content, String contentHtml, long author) {
+    public Post(String subject, String content, String contentHtml) {
         this.subject = subject;
         this.content = content;
         this.contentHtml = contentHtml;
-        this.author = author;
     }
-
 }
