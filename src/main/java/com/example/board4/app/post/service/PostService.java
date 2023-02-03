@@ -29,4 +29,8 @@ public class PostService {
     public Long update(Post post) {
         return postMapper.update(post);
     }
+
+    public void deleteById(Long id) {
+        postMapper.delete(id);
+    }
 }
