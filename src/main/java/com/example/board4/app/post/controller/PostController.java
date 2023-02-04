@@ -58,4 +58,5 @@ public class PostController {
         postService.deleteById(id);
         return "redirect:/post/list";
     }
+    
 }
