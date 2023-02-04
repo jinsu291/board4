@@ -58,5 +58,10 @@ public class PostController {
         postService.deleteById(id);
         return "redirect:/post/list";
     }
-    
+
+    @GetMapping("")
+    public String main(Model model){
+        model.addAttribute("posts", postService.postList());
+        return "/post/list";
+    }
 }

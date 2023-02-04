@@ -21,4 +21,10 @@
         FROM post
         WHERE id = #{id};
     </delete>
+
+    <select id="findAll" resultType="com.example.board4.app.post.entity.Post">
+        SELECT
+        *
+        FROM post;
+    </select>
 </mapper>
