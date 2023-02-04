@@ -64,4 +64,10 @@ public class PostController {
         model.addAttribute("posts", postService.postList());
         return "/post/list";
     }
+
+    @GetMapping("/{id}")
+    public String article(@PathVariable long id, Model model){
+        model.addAttribute("post", postService.findById(id));
+        return "/post/detail";
+    }
 }
