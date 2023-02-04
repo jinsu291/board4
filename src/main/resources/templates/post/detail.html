@@ -53,14 +53,14 @@
         </div>
         <div class="col">
             <button class="w-100 btn btn-secondary btn-lg"
-                    onclick="location.href='items.html'"
-                    th:onclick="|location.href='@{/post/{id}/delete(id=${post.id})}'|"
+                    onclick="location.href='remove.html'"
+                    th:onclick="|location.href='@{/post/{id}/remove(id=${post.id})}'|"
                     type="button">게시글 삭제</button>
         </div>
         <div class="col">
             <button class="w-100 btn btn-secondary btn-lg"
                     onclick="location.href='list.html'"
-                    th:onclick="|location.href='@{/post/list}'|"
+                    th:onclick="|location.href='@{/post}'|"
                     type="button">목록으로</button>
         </div>
 

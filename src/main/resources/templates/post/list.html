@@ -28,7 +28,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="post : ${post}">
+            <tr th:each="post : ${posts}">
                 <td><a href="detail.html" th:href="@{/post/{id}(id=${post.id})}" th:text="${post.id}">게시글 아이디</a></td>
                 <td th:text="${post.subject}">제목</td>
             </tr>

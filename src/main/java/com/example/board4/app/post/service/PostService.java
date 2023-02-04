@@ -39,5 +39,4 @@ public class PostService {
     public List<Post> postList(){
         return postMapper.findAll();
     }
-
 }
